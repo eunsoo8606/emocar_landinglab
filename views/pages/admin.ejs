@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <!-- 프리미엄 서체 로드 (Outfit & Noto Sans KR) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6.4.0 웹 아이콘 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- 공통 스타일 및 어드민 전용 스타일 -->
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/pages/<%= pageCss %>.css">
+</head>
+<body class="admin-body">
+
+  <!-- 관리자 전용 탑 네비게이션 헤더 -->
+  <header class="admin-header">
+    <div class="admin-header-container">
+      <div class="admin-brand">
+        <a href="/" class="admin-logo">
+          <img src="/images/logo/logo2.png" alt="Moodcar Logo" class="admin-logo-img">
+        </a>
+        <span class="admin-badge">Admin Dashboard</span>
+      </div>
+      <div class="admin-user-menu">
+        <span class="user-name"><i class="fa-solid fa-user-shield"></i> 최고관리자</span>
+        <a href="/" class="btn-logout-home" title="메인 홈으로 이동"><i class="fa-solid fa-house"></i> 메인 홈</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="admin-main">
+    <div class="admin-container">
+      
+      <!-- 대시보드 통계 요약 카드 (KPI Summary) -->
+      <section class="stats-overview-section">
+        <div class="stats-grid">
+          <!-- 카드 1: 총 접수 -->
+          <div class="stat-card total-card">
+            <div class="stat-icon-box"><i class="fa-solid fa-folder-open"></i></div>
+            <div class="stat-info">
+              <span class="stat-label">누적 문의접수</span>
+              <strong class="stat-val" id="count-total"><%= stats.total %></strong>
+            </div>
+          </div>
+          <!-- 카드 2: 접수 대기 -->
+          <div class="stat-card received-card">
+            <div class="stat-icon-box"><i class="fa-solid fa-bell"></i></div>
+            <div class="stat-info">
+              <span class="stat-label">접수완료 (대기)</span>
+              <strong class="stat-val" id="count-received"><%= stats.received %></strong>
+            </div>
+          </div>
+          <!-- 카드 3: 상담중 -->
+          <div class="stat-card progress-card">
+            <div class="stat-icon-box"><i class="fa-solid fa-comment-dots"></i></div>
+            <div class="stat-info">
+              <span class="stat-label">상담 진행중</span>
+              <strong class="stat-val" id="count-progress"><%= stats.progress %></strong>
+            </div>
+          </div>
+          <!-- 카드 4: 상담 완료 -->
+          <div class="stat-card completed-card">
+            <div class="stat-icon-box"><i class="fa-solid fa-circle-check"></i></div>
+            <div class="stat-info">
+              <span class="stat-label">상담 완료</span>
+              <strong class="stat-val" id="count-completed"><%= stats.completed %></strong>
+            </div>
+          </div>
+          <!-- 카드 5: 보류 -->
+          <div class="stat-card pending-card">
+            <div class="stat-icon-box"><i class="fa-solid fa-clock-rotate-left"></i></div>
+            <div class="stat-info">
+              <span class="stat-label">보류 및 기타</span>
+              <strong class="stat-val" id="count-pending"><%= stats.pending %></strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 관리 컨트롤 패널 (검색 및 정렬 필터) -->
+      <section class="control-panel-section">
+        <div class="control-wrapper">
+          <div class="search-box-wrapper">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" id="admin-search-input" placeholder="고객 연락처 또는 차량명을 입력하여 실시간 검색...">
+          </div>
+          <div class="filter-actions-wrapper">
+            <span class="results-count"><i class="fa-solid fa-list-check"></i> 검색 결과: <strong id="filter-count"><%= inquiries.length %></strong>건</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실시간 문의 목록 테이블 데이터 -->
+      <section class="inquiry-list-section">
+        <div class="table-responsive-wrapper">
+          <table class="admin-data-table" id="inquiryTable">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>접수 일시</th>
+                <th>차량 모델</th>
+                <th>고객 연락처</th>
+                <th>주행거리 (키로수)</th>
+                <th>차량 연식</th>
+                <th>상담 처리 상태</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% if (inquiries && inquiries.length > 0) { %>
+                <% inquiries.forEach(item => { %>
+                  <tr data-id="<%= item.id %>" class="inquiry-row" data-status="<%= item.status %>">
+                    <td class="cell-id"><%= item.id %></td>
+                    <td class="cell-date">
+                      <%= new Date(item.created_at).toLocaleString('ko-KR', { 
+                        year: 'numeric', month: '2-digit', day: '2-digit', 
+                        hour: '2-digit', minute:'2-digit', second:'2-digit', hour12: false 
+                      }) %>
+                    </td>
+                    <td class="cell-model"><strong class="car-highlight"><%= item.car_model %></strong></td>
+                    <td class="cell-phone">
+                      <span class="phone-num"><%= item.phone %></span>
+                      <button class="btn-copy-phone" onclick="copyToClipboard('<%= item.phone %>', this)" title="연락처 복사">
+                        <i class="fa-regular fa-copy"></i>
+                      </button>
+                    </td>
+                    <td class="cell-mileage">
+                      <% if (item.mileage === 'under-10') { %>
+                        10만 km 이하
+                      <% } else if (item.mileage === '10-20') { %>
+                        10만 ~ 20만 km
+                      <% } else if (item.mileage === 'over-20') { %>
+                        20만 km 이상 (추천)
+                      <% } else { %>
+                        <%= item.mileage %>
+                      <% } %>
+                    </td>
+                    <td class="cell-year"><%= item.car_year || '-' %></td>
+                    <td class="cell-status">
+                      <div class="status-select-wrapper">
+                        <select onchange="updateInquiryStatus(<%= item.id %>, this)" class="select-status status-badge-<%= item.status %>">
+                          <option value="접수완료" <%= item.status === '접수완료' ? 'selected' : '' %>>접수완료</option>
+                          <option value="상담중" <%= item.status === '상담중' ? 'selected' : '' %>>상담중</option>
+                          <option value="상담완료" <%= item.status === '상담완료' ? 'selected' : '' %>>상담완료</option>
+                          <option value="보류" <%= item.status === '보류' ? 'selected' : '' %>>보류</option>
+                        </select>
+                        <i class="fa-solid fa-chevron-down select-arrow"></i>
+                      </div>
+                    </td>
+                  </tr>
+                <% }) %>
+              <% } else { %>
+                <tr class="no-data-row">
+                  <td colspan="7">
+                    <div class="empty-state">
+                      <i class="fa-regular fa-folder-open empty-icon"></i>
+                      <p>아직 접수된 문의 내역이 존재하지 않습니다.</p>
+                    </div>
+                  </td>
+                </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="admin-footer">
+    <div class="admin-footer-container">
+      <p>&copy; 2026 무드카 (Moodcar) 중고차 수출 전문 파트너. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- 어드민 전용 제어 스크립트 로드 -->
+  <script src="/js/pages/<%= pageJs %>.js"></script>
+</body>
+</html>

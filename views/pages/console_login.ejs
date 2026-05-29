@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <!-- 프리미엄 서체 로드 (Outfit & Noto Sans KR) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6.4.0 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- 공통 스타일 및 로그인 전용 스타일 -->
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/pages/<%= pageCss %>.css">
+</head>
+<body class="login-body">
+
+  <!-- 다크 테크 배경 네온 오라 구체 -->
+  <div class="glow-sphere glow-sphere-1"></div>
+  <div class="glow-sphere glow-sphere-2"></div>
+  <div class="grid-overlay"></div>
+
+  <div class="login-wrapper">
+    <div class="login-card">
+      <div class="login-header">
+        <a href="/" class="login-logo-link">
+          <div class="logo-text" style="justify-content: center;">이모<span>카</span></div>
+        </a>
+        <h2 class="login-title">관리자 콘솔 로그인</h2>
+        <p class="login-subtitle">이모카 수출 파트너 관리자 인증</p>
+      </div>
+
+      <form id="consoleLoginForm" class="login-form">
+        <!-- 아이디 입력 그룹 -->
+        <div class="input-group">
+          <label for="username" class="input-label">Username</label>
+          <div class="input-wrapper">
+            <i class="fa-regular fa-user input-icon"></i>
+            <input type="text" id="username" name="username" placeholder="관리자 ID를 입력하세요" required autocomplete="username">
+          </div>
+        </div>
+
+        <!-- 비밀번호 입력 그룹 -->
+        <div class="input-group">
+          <label for="password" class="input-label">Password</label>
+          <div class="input-wrapper">
+            <i class="fa-solid fa-lock input-icon"></i>
+            <input type="password" id="password" name="password" placeholder="비밀번호를 입력하세요" required autocomplete="current-password">
+          </div>
+        </div>
+
+        <!-- 로그인 에러 피드백 메시지 영역 -->
+        <div id="error-message-box" class="error-msg-box" style="display: none;">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <span id="error-text">아이디 또는 비밀번호가 틀렸습니다.</span>
+        </div>
+
+        <!-- 로그인 전송 버튼 -->
+        <button type="submit" id="btn-login-submit" class="btn-login-submit">
+          <span class="btn-text">로그인</span>
+          <i class="fa-solid fa-arrow-right-to-bracket btn-icon"></i>
+          <div class="spinner" style="display: none;"></div>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="login-footer">
+    <p>&copy; 2026 이모카 (Emocar). All Rights Reserved.</p>
+  </footer>
+
+  <!-- 로그인 전용 로직 스크립트 로드 -->
+  <script src="/js/pages/<%= pageJs %>.js"></script>
+</body>
+</html>

@@ -1,0 +1,728 @@
+<%- include('../partials/header') %>
+
+  <!-- 히어로 섹션 (소개 및 폼, 모던 미니멀 배경) -->
+  <section class="hero-section">
+    <div class="hero-bg-overlay"></div>
+    <div class="hero-container">
+      <div class="hero-grid">
+        <!-- 좌측 소개란 (이모카 컨셉 반영) -->
+        <div class="hero-text-area">
+          <span class="hero-badge">TRUSTED USED CAR EXPORT</span>
+          <h1 class="hero-title">이모처럼 친근하게,<br>내 차 값은 <span class="highlight-text">최고가로!</span></h1>
+          <p class="hero-subtitle">
+            여성 대표가 운영하여 더욱 <strong>투명하고 정직한 이모카</strong>입니다.<br>
+            주행거리가 많아도, 연식이 오래되어도 감가 걱정 없이 내수 딜러가 대비 <strong>최대 300만 원 더</strong> 받는 해외 직수출 시세를 지금 확인해보세요.
+          </p>
+
+          <div class="hero-features-list">
+            <div class="h-feature-item">
+              <span class="h-feature-icon"><i class="fa-solid fa-check"></i></span>
+              여성 대표의 섬세함으로 <strong>100% 감가 없는 정직한 견적</strong>
+            </div>
+            <div class="h-feature-item">
+              <span class="h-feature-icon"><i class="fa-solid fa-check"></i></span>
+              귀찮은 행정 서류부터 구청 말소 등록까지 <strong>당일 즉시 완료</strong>
+            </div>
+            <div class="h-feature-item">
+              <span class="h-feature-icon"><i class="fa-solid fa-check"></i></span>
+              전국 어디든 찾아가는 <strong>무료 출장 감정 및 수수료 Zero</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- 우측 견적 및 무료 상담 신청 폼 -->
+        <div class="hero-form-area">
+          <div class="form-wrapper">
+            <div class="form-header">
+              <h3>간편 1분 견적 신청</h3>
+              <p>이모카와 함께하는 내 차 수출 시세 조회</p>
+            </div>
+            <form id="heroQuoteForm" class="quote-form">
+              <div class="form-group">
+                <label for="car-model">차량명 <span class="required">*</span></label>
+                <input type="text" id="car-model" name="carModel" placeholder="ex) 아반떼 AD, 쏘렌토 R, 스포티지" required>
+              </div>
+
+              <div class="form-group">
+                <label for="phone">연락처 <span class="required">*</span></label>
+                <div class="phone-inputs">
+                  <input type="tel" name="phone1" value="010" maxlength="3" required>
+                  <span>-</span>
+                  <input type="tel" name="phone2" placeholder="0000" maxlength="4" required>
+                  <span>-</span>
+                  <input type="tel" name="phone3" placeholder="0000" maxlength="4" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="mileage">주행거리 (키로수) <span class="required">*</span></label>
+                <select id="mileage" name="mileage" required>
+                  <option value="" disabled selected>주행거리를 선택하세요</option>
+                  <option value="10만km 이하">10만 km 이하</option>
+                  <option value="10만~20만km">10만 ~ 20만 km</option>
+                  <option value="20만km 이상">20만 km 이상 (수출 강력 추천)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="car-year">차량 연식</label>
+                <input type="text" id="car-year" name="carYear" placeholder="ex) 2015년식">
+              </div>
+
+              <div class="form-agreement">
+                <label class="agreement-label">
+                  <input type="checkbox" name="agree" checked required>
+                  <span>개인정보 수집 및 이용 동의 (필수)</span>
+                </label>
+              </div>
+
+              <button type="submit" class="btn-form-submit">
+                <span>1분 만에 내 차 견적 확인하기 <i class="fa-solid fa-angle-right"></i></span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 혜택 하이라이트 띠 바 (이모카 테마) -->
+  <section class="highlight-bar-section">
+    <div class="highlight-bar-container">
+      <div class="hl-item">
+        <span class="hl-icon"><i class="fa-solid fa-phone"></i></span>
+        <span class="hl-text">상담부터 출장까지<br><strong>100% 전과정 무료 진행</strong></span>
+      </div>
+      <div class="hl-item">
+        <span class="hl-icon"><i class="fa-solid fa-car"></i></span>
+        <span class="hl-text">주행거리가 아무리 많아도<br><strong>키로수 감가 없이 견적 보장</strong></span>
+      </div>
+      <div class="hl-item">
+        <span class="hl-icon"><i class="fa-solid fa-wrench"></i></span>
+        <span class="hl-text">노후 차량 / 사고 차량도<br><strong>폐차 가격 이상 무조건 OK</strong></span>
+      </div>
+      <div class="hl-item">
+        <span class="hl-icon"><i class="fa-solid fa-shield-halved"></i></span>
+        <span class="hl-text">정직과 신뢰 최우선<br><strong>당일 100% 송금 및 완벽 말소</strong></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 이모카의 가치 & 특징 섹션 (여성 대표 신뢰감 소구) -->
+  <section id="features" class="features-section">
+    <div class="section-container">
+      <div class="section-header">
+        <h2 class="section-title">왜 중고차 해외 수출은 <span class="highlight-text">이모카</span>일까요?</h2>
+        <p class="section-subtitle">삭막하고 불안했던 중고차 거래, 여성 대표가 직접 섬세하고 신뢰할 수 있게 운영하는 이모카에서 기분 좋게 마무리하세요.</p>
+      </div>
+
+      <div class="features-grid">
+        <!-- 특장점 1 -->
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-heart-circle-check"></i></div>
+          <h3 class="feature-title">여성 대표의 안심 비즈니스</h3>
+          <p class="feature-desc">과장된 감가, 부당한 트집 잡기를 전면 배제했습니다. 여성 대표가 내 차를 처분한다는 마음으로 투명하고 정직하게 1:1 전담 마크해 드립니다.</p>
+        </div>
+        <!-- 특장점 2 -->
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-sack-dollar"></i></div>
+          <h3 class="feature-title">해외 바이어 다이렉트 최고가</h3>
+          <p class="feature-desc">국내 내수 시장의 딜러 마진, 상사 수수료 등 불필요한 유통 구조를 전면 생략하여 해외 바이어 가격 그대로 가장 높은 금액을 챙겨 드립니다.</p>
+        </div>
+        <!-- 특장점 3 -->
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+          <h3 class="feature-title">당일 즉시 송금 & 말소 완료</h3>
+          <p class="feature-desc">계약서 작성 후 현장에서 100% 대금 즉시 송금은 물론, 구청 말소 대행 절차를 당일 완료하여 자동차세 및 보험 걱정을 깔끔하게 털어 드립니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 수출 대상 국가 무한 롤링 배너 섹션 (Marquee) -->
+  <section class="export-countries-marquee">
+    <div class="marquee-wrapper">
+      <div class="marquee-track">
+        <!-- 국기 이미지 세트 1 -->
+        <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/ly.svg" alt="리비아" class="flag-img" width="67" height="50"></div>
+        <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/cl.svg" alt="칠레" class="flag-img" width="67" height="50"></div>
+        <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/jo.svg" alt="요르단" class="flag-img" width="67" height="50"></div>
+        <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/ye.svg" alt="예멘" class="flag-img" width="67" height="50"></div>
+        <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/kh.svg" alt="캄보디아" class="flag-img" width="67" height="50"></div>
+        <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/hn.svg" alt="온두라스" class="flag-img" width="67" height="50"></div>
+        <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/eg.svg" alt="이집트" class="flag-img" width="67" height="50"></div>
+        <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/ge.svg" alt="조지아" class="flag-img" width="67" height="50"></div>
+
+        <!-- 국기 이미지 세트 2 -->
+        <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/ly.svg" alt="리비아" class="flag-img" width="67" height="50"></div>
+        <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/cl.svg" alt="칠레" class="flag-img" width="67" height="50"></div>
+        <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/jo.svg" alt="요르단" class="flag-img" width="67" height="50"></div>
+        <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/ye.svg" alt="예멘" class="flag-img" width="67" height="50"></div>
+        <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/kh.svg" alt="캄보디아" class="flag-img" width="67" height="50"></div>
+        <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/hn.svg" alt="온두라스" class="flag-img" width="67" height="50"></div>
+        <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/eg.svg" alt="이집트" class="flag-img" width="67" height="50"></div>
+        <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/ge.svg" alt="조지아" class="flag-img" width="67" height="50"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 이모카 차별점 섹션 -->
+  <section id="difference" class="difference-section">
+    <div class="section-container">
+      <div class="diff-split-grid">
+        <!-- 좌측: 브랜드 메시지 -->
+        <div class="diff-left-area">
+          <span class="diff-tag">TRUST & VALUE</span>
+          <h2 class="diff-main-title">이모카중고차수출은<br>약속드립니다.</h2>
+          <p class="diff-main-subtitle">
+            단순히 차량을 사고 파는 상업적 거래가 아닙니다. 여성 대표의 이름을 걸고 고객님의 소중한 자산을 가치 있게 인정해 드리는 이모카만의 4가지 안심 약속입니다.
+          </p>
+        </div>
+
+        <!-- 우측: 카드 리스트 -->
+        <div class="diff-right-area">
+          <div class="diff-list">
+            <!-- 차별점 1 -->
+            <div class="diff-list-item">
+              <div class="diff-item-inner">
+                <span class="diff-item-num">01</span>
+                <div class="diff-item-content">
+                  <div class="diff-item-header">
+                    <span class="diff-item-icon"><i class="fa-solid fa-circle-check"></i></span>
+                    <h3 class="diff-item-title">정직한 무감가 원칙</h3>
+                  </div>
+                  <p class="diff-item-desc">온라인/유선으로 최초 약속한 시세에서 현장 방문 시 터무니없는 말꼬리 잡기 식의 추가 감가를 엄격하게 제한하여 끝까지 투명하게 거래합니다.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 차별점 2 -->
+            <div class="diff-list-item">
+              <div class="diff-item-inner">
+                <span class="diff-item-num">02</span>
+                <div class="diff-item-content">
+                  <div class="diff-item-header">
+                    <span class="diff-item-icon"><i class="fa-solid fa-circle-check"></i></span>
+                    <h3 class="diff-item-title">전국 당일 방문 서비스</h3>
+                  </div>
+                  <p class="diff-item-desc">고객님이 직장에 계시든, 댁에 계시든 상관없습니다. 이모카 전문 감정사가 신속히 찾아가 수수료와 감정비 일체 없이 무료 견적을 제공합니다.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 차별점 3 -->
+            <div class="diff-list-item">
+              <div class="diff-item-inner">
+                <span class="diff-item-num">03</span>
+                <div class="diff-item-content">
+                  <div class="diff-item-header">
+                    <span class="diff-item-icon"><i class="fa-solid fa-circle-check"></i></span>
+                    <h3 class="diff-item-title">당일 말소증 즉시 발급</h3>
+                  </div>
+                  <p class="diff-item-desc">오후 2시 이전 계약 완료 시, 구청을 통한 말소 행정 처리를 당일 마무리하여 안심할 수 있도록 말소 증명서를 즉시 전달 드립니다.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 차별점 4 -->
+            <div class="diff-list-item">
+              <div class="diff-item-inner">
+                <span class="diff-item-num">04</span>
+                <div class="diff-item-content">
+                  <div class="diff-item-header">
+                    <span class="diff-item-icon"><i class="fa-solid fa-circle-check"></i></span>
+                    <h3 class="diff-item-title">법적 보호 및 신속 해소</h3>
+                  </div>
+                  <p class="diff-item-desc">정식 야드장과 관인 계약서 작성을 통해 차후 발생할 수 있는 행정적 리스크를 100% 본사에서 보증하며 안전을 법적으로 보호해 드립니다.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 바이어 직거래 현장 인증 갤러리 섹션 (Swiper) -->
+  <section id="buyer-cert" class="buyer-cert-section">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">GLOBAL PARTNERSHIP</span>
+        <h2 class="section-title">글로벌 바이어 직거래 현장</h2>
+        <p class="section-subtitle">이모카는 수많은 해외 현지 바이어 네트워크와 다이렉트로 협력하여 더 매력적인 단가를 산출해 냅니다.</p>
+      </div>
+
+      <div class="buyer-cert-slider-outer">
+        <div class="swiper buyer-cert-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide cert-item">
+              <div class="cert-image-box" style="background-image: url('/images/user/KakaoTalk_20260527_171153430.webp');"></div>
+            </div>
+            <div class="swiper-slide cert-item">
+              <div class="cert-image-box" style="background-image: url('/images/user/KakaoTalk_20260527_171153430_01.webp');"></div>
+            </div>
+            <div class="swiper-slide cert-item">
+              <div class="cert-image-box" style="background-image: url('/images/user/KakaoTalk_20260527_171153430_02.webp');"></div>
+            </div>
+            <div class="swiper-slide cert-item">
+              <div class="cert-image-box" style="background-image: url('/images/user/KakaoTalk_20260527_171153430_03.webp');"></div>
+            </div>
+            <div class="swiper-slide cert-item">
+              <div class="cert-image-box" style="background-image: url('/images/user/KakaoTalk_20260527_171153430_04.webp');"></div>
+            </div>
+            <div class="swiper-slide cert-item">
+              <div class="cert-image-box" style="background-image: url('/images/user/KakaoTalk_20260527_171153430_06.webp');"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 수출 시세 비교 리포트 섹션 -->
+  <section id="compare" class="compare-section">
+    <div class="section-container">
+      <div class="section-header">
+        <h2 class="section-title">내수 처분 대비 압도적인 혜택 비교</h2>
+        <p class="section-subtitle">연식이 오래되고 사고가 났더라도, 해외 시장에서는 가치 평가 기준이 달라 최고의 견적을 받으실 수 있습니다.</p>
+      </div>
+
+      <div class="compare-rows">
+        <!-- 첫 번째 행: 주행거리 비교 -->
+        <div class="compare-row">
+          <!-- 좌: 그래프 카드 -->
+          <div class="compare-card graph-card">
+            <div class="card-inner">
+              <div class="compare-badge-wrapper">
+                <span class="compare-badge">주행거리 15만 km 이상 노후 차량</span>
+              </div>
+              <h3 class="compare-price-title">평균 <span class="highlight-text">200만 원</span> 이상 추가 보상</h3>
+              <p class="compare-price-subtitle">수출 거래에서는 주행거리로 인한 무자비한 감가가 없습니다.</p>
+
+              <div class="graph-container">
+                <div class="graph-grid-lines">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="graph-bars">
+                  <div class="bar-wrapper">
+                    <div class="bar-label-top">평균 550만~600만</div>
+                    <div class="graph-bar-bg">
+                      <div class="graph-bar bar-korea" style="height: 70%;"></div>
+                    </div>
+                    <div class="bar-label-bottom">국내 딜러가</div>
+                  </div>
+                  <div class="bar-wrapper">
+                    <div class="bar-label-top highlight-price">최대 800만 원</div>
+                    <div class="graph-bar-bg">
+                      <div class="graph-bar bar-export" style="height: 100%;"></div>
+                    </div>
+                    <div class="bar-label-bottom highlight-price-bottom">이모카 수출가</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 우: 설명 카드 -->
+          <div class="compare-card info-card">
+            <div class="card-content">
+              <h3 class="info-title">주행거리가 많아 고민하셨나요?</h3>
+              <p class="info-desc">
+                해외 시장 바이어들은 계기판의 숫자보다 **엔진 성능, 미션 상태, 골격 상태**를 우선 평가합니다. 국내에서는 주행거리가 15만~20만 km만 넘어도 폐차 취급을 받지만, 이모카와 함께라면 높은 잔존 가치를 그대로 돌려받을 수 있습니다.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 두 번째 행: 사고이력 비교 -->
+        <div class="compare-row reverse">
+          <!-- 좌: 설명 카드 -->
+          <div class="compare-card info-card">
+            <div class="card-content">
+              <h3 class="info-title">사고 차량도 수출길에 오릅니다</h3>
+              <p class="info-desc">
+                접촉 사고나 프레임 용접 부위가 있어 국내 중고차 매장에서는 반값 수준으로 깎이는 차량이라도, 개발도상국 바이어들은 부품용 차량 및 현지 재생 수리를 전제로 하여 정직한 매입가를 책정해 줍니다. 
+                차를 헐값에 넘기기 전 반드시 이모카에서 무료 감정을 먼저 받아보세요.
+              </p>
+            </div>
+          </div>
+
+          <!-- 우: 그래프 카드 -->
+          <div class="compare-card graph-card">
+            <div class="card-inner">
+              <div class="compare-badge-wrapper">
+                <span class="compare-badge">과거 단순 교환 및 판금 이력 차량</span>
+              </div>
+              <h3 class="compare-price-title">사고이력 감가 <span class="highlight-text">최소화</span></h3>
+              <p class="compare-price-subtitle">부품 및 정비 위주의 가격 산정으로 폭넓게 인정받습니다.</p>
+
+              <div class="graph-container">
+                <div class="graph-grid-lines">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="graph-bars">
+                  <div class="bar-wrapper">
+                    <div class="bar-label-top">평균 520만</div>
+                    <div class="graph-bar-bg">
+                      <div class="graph-bar bar-korea" style="height: 65%;"></div>
+                    </div>
+                    <div class="bar-label-bottom">국내 딜러가</div>
+                  </div>
+                  <div class="bar-wrapper">
+                    <div class="bar-label-top highlight-price">최대 800만 원</div>
+                    <div class="graph-bar-bg">
+                      <div class="graph-bar bar-export" style="height: 100%;"></div>
+                    </div>
+                    <div class="bar-label-bottom highlight-price-bottom">이모카 수출가</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 수출 완료 현황 섹션 (최근 수출 현황) -->
+  <section id="gallery" class="gallery-section">
+    <div class="section-container">
+      <div class="section-header">
+        <h2 class="section-title">최근 이모카 실시간 수출 현황</h2>
+        <p class="section-subtitle">고객님들이 내수 딜러들의 무리한 감가를 피하고 이모카를 통해 직접 수출 완료한 실제 차량입니다.</p>
+      </div>
+
+      <div class="gallery-slider-outer">
+        <div class="swiper gallery-swiper">
+          <div class="swiper-wrapper">
+            <!-- K5 -->
+            <div class="swiper-slide gallery-item">
+              <div class="gallery-image-box" style="background-image: url('/images/KakaoTalk_20260523_133405053_13.webp');">
+                <span class="badge-status text-teal">실시간 매입</span>
+                <span class="badge-country">🇱🇾 리비아 수출 완료</span>
+              </div>
+              <div class="gallery-info">
+                <h4 class="gallery-item-title">기아 K5 1.7 디젤 1세대</h4>
+                <div class="gallery-spec-grid">
+                  <div class="spec-item"><i class="fa-regular fa-calendar-days"></i> 2011년식</div>
+                  <div class="spec-item"><i class="fa-solid fa-gauge-high"></i> 21만 km</div>
+                  <div class="spec-item"><i class="fa-regular fa-circle-check"></i> 엔진/미션 양호</div>
+                  <div class="spec-item"><i class="fa-solid fa-shield"></i> 당일 말소 완료</div>
+                </div>
+                <div class="gallery-price-bar">
+                  <span>내수 시세 대비 <strong class="price-up">+180만 원</strong> 이득!</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 투싼 -->
+            <div class="swiper-slide gallery-item">
+              <div class="gallery-image-box" style="background-image: url('/images/KakaoTalk_20260523_133405053_06.webp');">
+                <span class="badge-status text-orange">인기 차종</span>
+                <span class="badge-country">🇨🇱 칠레 수출 완료</span>
+              </div>
+              <div class="gallery-info">
+                <h4 class="gallery-item-title">현대 투싼 ix LMX20</h4>
+                <div class="gallery-spec-grid">
+                  <div class="spec-item"><i class="fa-regular fa-calendar-days"></i> 2010년식</div>
+                  <div class="spec-item"><i class="fa-solid fa-gauge-high"></i> 26만 km</div>
+                  <div class="spec-item"><i class="fa-regular fa-circle-check"></i> 하부 상태 양호</div>
+                  <div class="spec-item"><i class="fa-solid fa-shield"></i> 당일 말소 완료</div>
+                </div>
+                <div class="gallery-price-bar">
+                  <span>폐차비 대비 <strong class="price-up">+210만 원</strong> 이득!</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 그랜저 TG -->
+            <div class="swiper-slide gallery-item">
+              <div class="gallery-image-box" style="background-image: url('/images/KakaoTalk_20260523_133405053_10.webp');">
+                <span class="badge-status text-teal">최고가 인수</span>
+                <span class="badge-country">🇯🇴 요르단 수출 완료</span>
+              </div>
+              <div class="gallery-info">
+                <h4 class="gallery-item-title">현대 그랜저 TG 뉴 럭셔리</h4>
+                <div class="gallery-spec-grid">
+                  <div class="spec-item"><i class="fa-regular fa-calendar-days"></i> 2009년식</div>
+                  <div class="spec-item"><i class="fa-solid fa-gauge-high"></i> 18만 km</div>
+                  <div class="spec-item"><i class="fa-regular fa-circle-check"></i> 외관 단순 흠집</div>
+                  <div class="spec-item"><i class="fa-solid fa-shield"></i> 당일 말소 완료</div>
+                </div>
+                <div class="gallery-price-bar">
+                  <span>딜러 매입가 대비 <strong class="price-up">+150만 원</strong> 이득!</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 스포티지 R -->
+            <div class="swiper-slide gallery-item">
+              <div class="gallery-image-box" style="background-image: url('/images/KakaoTalk_20260523_133405053_09.webp');">
+                <span class="badge-status text-teal">강력 추천</span>
+                <span class="badge-country">🇰🇭 캄보디아 수출 완료</span>
+              </div>
+              <div class="gallery-info">
+                <h4 class="gallery-item-title">기아 스포티지 R TLX</h4>
+                <div class="gallery-spec-grid">
+                  <div class="spec-item"><i class="fa-regular fa-calendar-days"></i> 2012년식</div>
+                  <div class="spec-item"><i class="fa-solid fa-gauge-high"></i> 23만 km</div>
+                  <div class="spec-item"><i class="fa-regular fa-circle-check"></i> 매연/누유 점검 완료</div>
+                  <div class="spec-item"><i class="fa-solid fa-shield"></i> 당일 말소 완료</div>
+                </div>
+                <div class="gallery-price-bar">
+                  <span>내수 견적 대비 <strong class="price-up">+240만 원</strong> 이득!</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 슬라이더 컨트롤러 -->
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 수출 진행 절차 섹션 (모던 타임라인) -->
+  <section id="process" class="process-section">
+    <div class="section-container">
+      <div class="section-header">
+        <h2 class="section-title">간편한 3단계 수출 상담 절차</h2>
+        <p class="section-subtitle">전화 한 통 또는 온라인 1분 견적 신청으로 모든 행정 절차와 이체까지 안전하게 처리해 드립니다.</p>
+      </div>
+
+      <div class="process-timeline-outer">
+        <div class="timeline-connect-line"></div>
+
+        <div class="process-grid">
+          <!-- 1단계 -->
+          <div class="process-card">
+            <span class="process-num">01</span>
+            <div class="process-card-content">
+              <div class="process-icon-box"><i class="fa-regular fa-file-lines"></i></div>
+              <h3 class="process-card-title">1분 견적 신청</h3>
+              <p class="process-card-desc">온라인 폼이나 간편 전화 상담을 통해 고객님의 차량 정보와 주행거리를 입력하고 가상 견적 시세를 조회합니다.</p>
+            </div>
+          </div>
+          <!-- 2단계 -->
+          <div class="process-card">
+            <span class="process-num">02</span>
+            <div class="process-card-content">
+              <div class="process-icon-box"><i class="fa-solid fa-magnifying-glass"></i></div>
+              <h3 class="process-card-title">무료 방문 및 정밀 평가</h3>
+              <p class="process-card-desc">이모카 전문 감정사가 신속하게 예약한 시간에 방문하여 최종 매입 실차 견적을 책정하며, 수수료는 일체 없습니다.</p>
+            </div>
+          </div>
+          <!-- 3단계 -->
+          <div class="process-card">
+            <span class="process-num">03</span>
+            <div class="process-card-content">
+              <div class="process-icon-box"><i class="fa-solid fa-building-columns"></i></div>
+              <h3 class="process-card-title">당일 송금 및 구청 말소</h3>
+              <p class="process-card-desc">인수와 동시에 현장에서 차주 통장으로 전액 송금하고, 탁송 즉시 당일 말소 처리를 하여 완전하게 행정을 종료합니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 실시간 상담 현황 섹션 (교차 롤러 및 모던 슬로건) -->
+  <section class="live-status-section">
+    <div class="live-status-overlay"></div>
+    <div class="live-status-container">
+
+      <!-- 좌측: 실시간 상담 접수 현황 롤러 -->
+      <div class="live-feed-column">
+        <div class="live-feed-header">
+          <span class="live-pulse"></span>
+          <h3>실시간 이모카 상담 접수 현황</h3>
+        </div>
+
+        <div class="live-feed-grid">
+          <!-- Up Track -->
+          <div class="live-feed-box">
+            <div class="live-feed-track track-up">
+              <div class="live-item-card">
+                <span class="live-car-icon"><i class="fa-solid fa-car-side"></i></span>
+                <div class="live-item-info">
+                  <span class="live-car-name">현대 쏘나타 LF 16년식 수출 문의</span>
+                  <span class="live-time-ago">실시간</span>
+                </div>
+                <span class="live-status-badge text-teal">접수완료</span>
+              </div>
+              <div class="live-item-card">
+                <span class="live-car-icon"><i class="fa-solid fa-car-side"></i></span>
+                <div class="live-item-info">
+                  <span class="live-car-name">기아 스포티지 R 13년식 견적조회</span>
+                  <span class="live-time-ago">3분전</span>
+                </div>
+                <span class="live-status-badge text-teal">상담중</span>
+              </div>
+              <div class="live-item-card">
+                <span class="live-car-icon"><i class="fa-solid fa-car-side"></i></span>
+                <div class="live-item-info">
+                  <span class="live-car-name">현대 그랜드스타렉스 11년식 상담</span>
+                  <span class="live-time-ago">10분전</span>
+                </div>
+                <span class="live-status-badge text-teal">상담완료</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Down Track -->
+          <div class="live-feed-box">
+            <div class="live-feed-track track-down">
+              <div class="live-item-card">
+                <span class="live-car-icon"><i class="fa-solid fa-car-side"></i></span>
+                <div class="live-item-info">
+                  <span class="live-car-name">아반떼 MD 12년식 견적 조회</span>
+                  <span class="live-time-ago">실시간</span>
+                </div>
+                <span class="live-status-badge text-teal">접수완료</span>
+              </div>
+              <div class="live-item-card">
+                <span class="live-car-icon"><i class="fa-solid fa-car-side"></i></span>
+                <div class="live-item-info">
+                  <span class="live-car-name">현대 투싼 15년식 수출 상담</span>
+                  <span class="live-time-ago">5분전</span>
+                </div>
+                <span class="live-status-badge text-teal">상담중</span>
+              </div>
+              <div class="live-item-card">
+                <span class="live-car-icon"><i class="fa-solid fa-car-side"></i></span>
+                <div class="live-item-info">
+                  <span class="live-car-name">기아 포르테 10년식 상담</span>
+                  <span class="live-time-ago">15분전</span>
+                </div>
+                <span class="live-status-badge text-teal">상담완료</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 우측: 모던 슬로건 및 상담 유도 -->
+      <div class="live-slogan-column">
+        <span class="live-badge-top"><i class="fa-solid fa-circle-play"></i> LIVE COUNSELING</span>
+        <h2 class="live-title">정직함으로<br><span class="highlight-text">실시간 신뢰 누적</span></h2>
+        <p class="live-desc">
+          이모카는 투명한 오픈 시세 정책과 친근하고 자세한 상담을 바탕으로 신뢰를 쌓아가고 있습니다. 고민 중이신 내 차 시세를 지금 확인해 보시고 해외 바이어 시세를 바로 받아보세요.
+        </p>
+
+        <div class="live-btn-group">
+          <a href="#global-header" class="btn-live-action" id="btnLiveAction">
+            <span>지금 무료 상담 예약하기 <i class="fa-solid fa-chevron-right"></i></span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 공식 블로그 연동 섹션 -->
+  <section id="blog-review" class="blog-review-section">
+    <div class="blog-review-container">
+      <div class="blog-review-badge">
+        <i class="fa-solid fa-quote-left"></i> EMOCAR BLOG <i class="fa-solid fa-quote-right"></i>
+      </div>
+      <h2 class="blog-review-title">고객들의 <span class="highlight-text">리얼 수출 생생후기</span></h2>
+      <p class="blog-review-subtitle">
+        전국 각지에서 이모카를 통해 감가 없이 소중한 차를 고가로 판매하신 차주님들의 생생한 실제 정비 및 인수 스토리를 블로그에서 만나보세요.
+      </p>
+
+      <div class="blog-preview-card">
+        <div class="blog-card-content">
+          <div class="blog-logo">
+            <span class="naver-badge">N</span>
+            <strong>이모카 공식 블로그</strong>
+          </div>
+          <h3 class="blog-card-title">주행거리 30만km 소나타, 폐차 대신 수출로 150만원 추가 보장!</h3>
+          <p class="blog-card-desc">
+            과장된 감정 시세에 지치셨나요? 정직하고 안전한 여성 대표가 직접 설계한 당일 구청 신속 말소 대행 및 차주 만족 거래 후기를 확인하실 수 있습니다.
+          </p>
+          <a href="https://blog.naver.com/qqodzh11" target="_blank" class="btn-blog-action">
+            <span>공식 블로그 후기 보러가기 <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+          </a>
+        </div>
+        <div class="blog-card-visual">
+          <div class="visual-circle"></div>
+          <i class="fa-solid fa-square-rss visual-icon"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 하단 고정 견적 문의바 (Sticky Bottom Bar) -->
+  <div class="sticky-quote-bar" id="stickyQuoteBar">
+    <div class="sticky-bar-container">
+      <form class="sticky-form" id="stickyQuoteForm" onsubmit="handleStickyFormSubmit(event)">
+        <div class="sticky-form-content">
+          <div class="sticky-title">
+            <span class="pulse-live"></span>
+            <strong>이모카</strong> 실시간 견적
+          </div>
+          <div class="sticky-input-group">
+            <input type="text" id="sticky-car-model" name="carModel" placeholder="차량명 입력 (ex. 아반떼 AD)" required>
+            <input type="tel" id="sticky-phone" name="phone" placeholder="연락처 입력 (ex. 010-0000-0000)" required>
+          </div>
+          <div class="sticky-agreement">
+            <label class="sticky-checkbox-label">
+              <input type="checkbox" id="sticky-agree" name="agree" checked required>
+              <span>개인정보 제공 동의</span>
+            </label>
+            <button type="button" class="btn-policy-modal-open" onclick="openPolicyModal()">[자세히]</button>
+          </div>
+          <button type="submit" class="btn-sticky-submit">
+            <span>무료 견적 신청 <i class="fa-solid fa-paper-plane"></i></span>
+          </button>
+        </div>
+      </form>
+
+      <!-- 모바일 전용 2열 버튼 -->
+      <div class="sticky-mobile-action">
+        <a href="#global-header" class="btn-sticky-mobile-trigger btn-mobile-quote">
+          <span><i class="fa-solid fa-paper-plane"></i> 견적 신청</span>
+        </a>
+        <a href="tel:010-2995-2332" class="btn-sticky-mobile-trigger btn-mobile-call">
+          <span><i class="fa-solid fa-phone"></i> 전화 상담</span>
+        </a>
+      </div>
+
+      <!-- 고정바 닫기 버튼 -->
+      <button type="button" class="btn-sticky-close" onclick="closeStickyBar()" aria-label="닫기">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- 개인정보처리방침 팝업 모달 -->
+  <div class="policy-modal" id="policyModal" role="dialog" aria-modal="true">
+    <div class="policy-modal-overlay" onclick="closePolicyModal()"></div>
+    <div class="policy-modal-wrapper">
+      <div class="policy-modal-header">
+        <h3>개인정보처리방침</h3>
+        <button type="button" class="btn-modal-close" onclick="closePolicyModal()"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="policy-modal-body">
+        <div class="policy-text-content">
+          <h4>개인정보처리방침 동의</h4>
+          <p>정보통신망이용촉진및정보보호등에관한법률 등 관련 법령에 의거한 개인정보취급방침을 준수하며, 이용자의 권익 보호를 위해 상담 목적으로 성함, 연락처 정보를 보관 및 활용합니다.</p>
+          <h5>개인정보 수집 및 이용 목적</h5>
+          <p>1. 차량 견적 무료 전화/문자 상담 서비스 제공</p>
+          <p>2. 상담 이력 보관 및 통계 분석</p>
+          <h5>수집하는 항목</h5>
+          <p>이름(또는 차량 모델), 연락처</p>
+          <h5>보유 및 이용기간</h5>
+          <p>원칙적으로 고객의 처리 철회 요구 시까지 또는 목적 달성 후 1년 이내 즉시 파기합니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<%- include('../partials/footer') %>

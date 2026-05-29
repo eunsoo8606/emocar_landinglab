@@ -1,0 +1,12 @@
+<%- include('../partials/header') %>
+
+<section class="error-section" style="padding: 100px 20px; text-align: center; color: var(--text-primary);">
+  <div class="error-container" style="max-width: 600px; margin: 0 auto;">
+    <h1 style="font-size: 5rem; margin-bottom: 20px; font-family: 'Outfit', sans-serif; background: linear-gradient(135deg, #ff416c, #ff4b2b); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><%= typeof error !== 'undefined' && error.status ? error.status : '500' %></h1>
+    <h2 style="font-size: 2rem; margin-bottom: 20px;"><%= typeof message !== 'undefined' ? message : '요청하신 페이지를 찾을 수 없습니다.' %></h2>
+    <p style="color: var(--text-secondary); margin-bottom: 40px;">주소가 올바르지 않거나 서버에 일시적인 오류가 발생했습니다.</p>
+    <a href="/" class="btn-primary" style="display: inline-block;">메인으로 돌아가기</a>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

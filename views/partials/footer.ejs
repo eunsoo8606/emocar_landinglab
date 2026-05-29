@@ -1,0 +1,39 @@
+</main>
+
+<!-- 글로벌 푸터 -->
+<footer id="global-footer" class="footer">
+  <div class="footer-container">
+    <div class="footer-logo-text">이모<span>카</span></div>
+    
+    <div class="footer-business-info">
+      <p>
+        <span><strong>대표</strong> : 이슬기</span>
+        <span class="divider">|</span>
+        <span><strong>사업자등록번호</strong> : 101-37-06604</span>
+      </p>
+      <p>
+        <span><strong>주소</strong> : 인천광역시 남동구 구월남로 120, 6층 601-68호(구월동, 백세빌딩)</span>
+      </p>
+    </div>
+
+    <div class="footer-copyright-area">
+      <p class="copyright">&copy; 2026 이모카. All Rights Reserved.</p>
+    </div>
+
+    <div class="footer-partnership-info">
+      <p>광고 제휴 전용 번호 : 050-8201-0181</p>
+      <p class="partnership-notice">*저희는 광고 제휴 관련 전화 문의를 받지 않습니다. 제휴 문의는 광고 제휴 전용 번호로 연락해 주시기 바랍니다.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Swiper Slider JS CDN -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<!-- 페이지별 독립 JS 동적 로드 -->
+<% if (typeof pageJs !=='undefined' && pageJs) { %>
+  <script src="/js/pages/<%= pageJs %>.js"></script>
+  <% } %>
+    </body>
+
+    </html>

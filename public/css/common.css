@@ -1,0 +1,373 @@
+/* ==========================================
+   Emocar Global Design System & Variables
+   ========================================== */
+
+:root {
+  /* 테마 컬러 (따뜻한 옐로우 & 신뢰감을 주는 웜 차콜) */
+  --bg-primary: #fdfdfa; /* 부드러운 아이보리 웜 화이트 */
+  --bg-secondary: #f6f5f0; /* 따뜻한 파스텔 웜 그레이 */
+  --bg-tertiary: #ebe9e0; /* 연한 샌드 브라운 파스텔 */
+  
+  /* 텍스트 컬러 */
+  --text-primary: #1e1e1d; /* 부드러운 차콜 블랙 */
+  --text-secondary: #4a4a47; /* 차분한 딥 그레이 */
+  --text-muted: #8c8c87; /* 부드러운 그레이 */
+  
+  /* 이모카 메인 옐로우 (#f9e400) 기반 디자인 시스템 */
+  --accent-color: #f9e400; /* 활기찬 옐로우 */
+  --accent-secondary: #e5d100; /* 딥 옐로우 */
+  --accent-light: #fffde6; /* 아주 밝은 파스텔 옐로우 */
+  --text-on-accent: #1e1e1d; /* 옐로우 배경 위에 들어가는 어두운 텍스트 */
+  
+  /* 액센트 그라데이션 및 네온 효과 */
+  --accent-gradient: linear-gradient(135deg, #f9e400 0%, #e5d100 100%);
+  --accent-glow: 0 8px 24px rgba(249, 228, 0, 0.25);
+  
+  /* 시스템 상태 */
+  --error: #e04f4f;
+  --success: #3c9b74;
+  
+  /* 폰트 정의 */
+  --font-sans: 'Outfit', 'Noto Sans KR', sans-serif;
+  
+  /* 레이아웃 & 애니메이션 */
+  --max-width: 1200px;
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --header-height: 80px;
+}
+
+/* ==========================================
+   CSS Reset & Base
+   ========================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.7;
+  overflow-x: hidden;
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ==========================================
+   공통 타이포그래피 & 유틸리티
+   ========================================== */
+
+.highlight-text {
+  position: relative;
+  display: inline-block;
+  font-weight: 700;
+}
+
+.highlight-text::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: rgba(249, 228, 0, 0.5);
+  z-index: -1;
+  border-radius: 4px;
+}
+
+/* 버튼 컴포넌트 */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-gradient);
+  color: var(--text-on-accent);
+  font-weight: 700;
+  padding: 14px 32px;
+  border-radius: 50px;
+  box-shadow: var(--accent-glow);
+  transition: var(--transition-smooth);
+  border: none;
+  cursor: pointer;
+  letter-spacing: -0.01em;
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(249, 228, 0, 0.35);
+}
+
+.btn-primary:active {
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  color: var(--text-primary);
+  font-weight: 600;
+  padding: 14px 32px;
+  border-radius: 50px;
+  border: 1px solid var(--bg-tertiary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: var(--transition-smooth);
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: var(--bg-secondary);
+  border-color: var(--text-muted);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* ==========================================
+   글로벌 레이아웃 (Header)
+   ========================================== */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background: rgba(253, 253, 250, 0.85); /* 웜 화이트 반투명 */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  transition: var(--transition-smooth);
+}
+
+.header-container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 1.6rem;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+}
+
+.logo-text span {
+  color: #e5d100;
+  position: relative;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-link {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  position: relative;
+  padding: 6px 0;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--text-primary);
+  transition: var(--transition-smooth);
+  transform: translateX(-50%);
+}
+
+.nav-link:hover {
+  color: var(--text-primary);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-btn {
+  background: var(--text-primary);
+  color: #ffffff;
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: var(--transition-smooth);
+}
+
+.nav-btn:hover {
+  background: var(--accent-color);
+  color: var(--text-on-accent);
+  transform: translateY(-2px);
+  box-shadow: var(--accent-glow);
+}
+
+.main-content {
+  margin-top: var(--header-height);
+  min-height: calc(100vh - var(--header-height));
+}
+
+/* ==========================================
+   글로벌 레이아웃 (Footer)
+   ========================================== */
+
+.footer {
+  background-color: #1a1a19; /* 매우 어두운 웜 차콜 */
+  color: rgba(255, 255, 255, 0.6);
+  padding: 60px 24px;
+  font-size: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  text-align: left;
+}
+
+.footer-logo-text {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.footer-logo-text span {
+  color: var(--accent-color);
+}
+
+.footer-business-info {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.9;
+}
+
+.footer-business-info p {
+  margin-bottom: 6px;
+}
+
+.footer-business-info p:last-child {
+  margin-bottom: 0;
+}
+
+.footer-business-info span {
+  display: inline-block;
+}
+
+.footer-business-info strong {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+.footer-business-info .divider {
+  margin: 0 10px;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.footer-copyright-area {
+  margin-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  padding-top: 20px;
+}
+
+.copyright {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.8rem;
+}
+
+.footer-partnership-info {
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.8;
+}
+
+.partnership-notice {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.35);
+  margin-top: 4px;
+}
+
+/* ==========================================
+   반응형 브레이크포인트
+   ========================================== */
+
+@media (max-width: 768px) {
+  .header {
+    height: 70px;
+  }
+  
+  --header-height: 70px;
+  
+  .header-container {
+    padding: 0 20px;
+  }
+  
+  .nav-menu {
+    display: none;
+  }
+  
+  .footer {
+    padding: 40px 20px;
+  }
+  
+  .footer-container {
+    gap: 20px;
+  }
+
+  .footer-business-info .divider {
+    display: none;
+  }
+  
+  .footer-business-info span {
+    display: block;
+    margin-bottom: 4px;
+  }
+}

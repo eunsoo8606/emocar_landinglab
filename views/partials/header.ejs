@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    <%= typeof title !=='undefined' ? title : '이모카 - 신뢰를 더한 중고차 해외 수출' %>
+  </title>
+
+  <!-- SEO 최적화 메타데이터 -->
+  <meta name="description"
+    content="여성 대표가 직접 운영하여 신뢰를 더한 중고차 해외 수출 전문 이모카! 주행거리 감가 없이 해외 직수출로 내 차 최고가 견적 및 신속한 당일 말소 대행.">
+  <meta name="keywords" content="이모카, 중고차수출, 중고차해외수출, 중고차직수출, 중고차최고가매입, 여성대표중고차, 폐차대행, 당일말소">
+  
+  <!-- 네이버 서치어드바이저 소유권 확인 (필요시 교체) -->
+  <meta name="naver-site-verification" content="67604072c4c775d33b8e2b7fff43fb1bfd38c5c9" />
+
+  <!-- 대표 URL 설정 -->
+  <link rel="canonical" href="https://emocar.co.kr/">
+  <link rel="alternate" type="application/rss+xml" title="이모카 중고차수출 RSS Feed" href="https://emocar.co.kr/rss.xml">
+
+  <!-- 파비콘 설정 -->
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/images/logo/favicon.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/images/logo/favicon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="<%= typeof title !== 'undefined' ? title : '이모카 중고차 해외 수출' %>">
+  <meta property="og:description" content="여성 대표가 정직하게 운영하는 중고차 해외 수출 전문 브랜드 이모카! 감가 없이 최대 300만원 더 받는 비결을 확인하세요.">
+  <meta property="og:image" content="<%= typeof baseUrl !== 'undefined' ? baseUrl : 'https://emocar.co.kr' %>/images/meta-image.png">
+  <meta property="og:url" content="<%= typeof baseUrl !== 'undefined' ? baseUrl : 'https://emocar.co.kr' %>/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="<%= typeof title !== 'undefined' ? title : '이모카 중고차 해외 수출' %>">
+  <meta name="twitter:description" content="여성 대표가 정직하게 운영하는 중고차 해외 수출 전문 브랜드 이모카! 감가 없이 최대 300만원 더 받는 비결을 확인하세요.">
+  <meta name="twitter:image" content="<%= typeof baseUrl !== 'undefined' ? baseUrl : 'https://emocar.co.kr' %>/images/meta-image.png">
+
+  <!-- JSON-LD 구조화 데이터 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "이모카 (Emocar)",
+    "image": "https://emocar.co.kr/images/logo/logo.png",
+    "@id": "https://emocar.co.kr/#website",
+    "url": "https://emocar.co.kr/",
+    "telephone": "010-2995-2332",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "송도동",
+      "addressLocality": "Incheon",
+      "addressRegion": "Incheon",
+      "postalCode": "22000",
+      "addressCountry": "KR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 37.4093,
+      "longitude": 126.6801
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
+    "sameAs": [
+      "https://blog.naver.com/qqodzh11"
+    ]
+  }
+  </script>
+
+  <!-- 프리미엄 서체 로드 (Outfit & Noto Sans KR) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Outfit:wght@300;400;600;800&display=swap"
+    rel="stylesheet">
+
+  <!-- 공통 스타일 (디자인 시스템 토큰 포함) -->
+  <link rel="stylesheet" href="/css/common.css">
+
+  <!-- 페이지별 독립 CSS 동적 로드 -->
+  <% if (typeof pageCss !=='undefined' && pageCss) { %>
+    <link rel="stylesheet" href="/css/pages/<%= pageCss %>.css">
+    <% } %>
+      <!-- Font Awesome 6.4.0 웹 아이콘 CDN -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+      <!-- Swiper Slider CSS CDN -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+</head>
+
+<body>
+  <!-- 글로벌 네비게이션 헤더 -->
+  <header id="global-header" class="header">
+    <div class="header-container">
+      <a href="/" class="logo">
+        <div class="logo-text">이모<span>카</span></div>
+      </a>
+      <nav class="nav-menu">
+        <a href="#features" class="nav-link">이모카만의 혜택</a>
+        <a href="#gallery" class="nav-link">수출 선적 현황</a>
+        <a href="#process" class="nav-link">수출 4단계 절차</a>
+        <a href="https://blog.naver.com/qqodzh11" target="_blank" class="nav-link blog-link">
+          <i class="fa-solid fa-square-rss" style="color: #e5d100; margin-right: 4px;"></i>공식 블로그
+        </a>
+        <a href="#order" class="nav-btn">간편 1분 견적</a>
+      </nav>
+    </div>
+  </header>
+  <main class="main-content">
