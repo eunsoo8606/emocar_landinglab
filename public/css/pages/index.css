@@ -1310,6 +1310,94 @@
 }
 
 /* ------------------------------------------
+   Section: 이모카 중고차수출 진행절차 (section-process)
+   ------------------------------------------ */
+.section-process {
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--bg-secondary);
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 60px;
+}
+
+.process-card {
+  background: #ffffff;
+  border: 1px solid var(--bg-tertiary);
+  border-radius: 24px;
+  padding: 45px 24px 35px 24px;
+  position: relative;
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.process-step-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--accent-color);
+  color: var(--text-on-accent);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 4px 16px;
+  border-radius: 30px;
+  box-shadow: var(--accent-glow);
+  border: 1px solid rgba(0, 0, 0, 0.01);
+  letter-spacing: 0.5px;
+}
+
+.process-icon-box {
+  font-size: 2.2rem;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-secondary);
+  border-radius: 50%;
+  transition: var(--transition-smooth);
+}
+
+.process-card h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.process-card p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin: 0;
+  word-break: keep-all;
+}
+
+.process-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent-color);
+  box-shadow: 0 16px 36px rgba(249, 228, 0, 0.18);
+}
+
+.process-card:hover .process-icon-box {
+  background-color: var(--accent-color);
+  color: var(--text-on-accent);
+  box-shadow: var(--accent-glow);
+}
+
+/* ------------------------------------------
    Responsive Breakpoints
    ------------------------------------------ */
 @media (max-width: 991px) {
@@ -1349,6 +1437,11 @@
   .family-visual {
     height: 200px;
   }
+
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 24px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1374,5 +1467,14 @@
 
   .guarantee-document {
     padding: 40px 24px;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+    gap: 35px 20px;
+  }
+
+  .process-card {
+    padding: 40px 20px 30px 20px;
   }
 }
