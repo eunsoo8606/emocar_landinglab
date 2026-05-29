@@ -9,10 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
   
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
-      header.style.background = 'rgba(253, 253, 250, 0.98)';
+      header.style.background = 'rgba(240, 242, 248, 0.98)';
       header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.04)';
     } else {
-      header.style.background = 'rgba(253, 253, 250, 0.85)';
+      header.style.background = 'rgba(240, 242, 248, 0.85)';
       header.style.boxShadow = 'none';
     }
   });
