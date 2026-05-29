@@ -266,6 +266,509 @@
 }
 
 /* ------------------------------------------
+   Common Story Section Styling
+   ------------------------------------------ */
+.story-section {
+  padding: 120px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.story-container {
+  width: 100%;
+  max-width: 900px; /* 설득용 스토리는 좁게 모아 보여주는 게 가독성이 좋습니다 */
+  margin: 0 auto;
+  text-align: center;
+}
+
+.story-header {
+  margin-bottom: 60px;
+}
+
+.story-tag {
+  display: inline-block;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  background: var(--bg-secondary);
+  padding: 6px 16px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+.warning-tag {
+  color: var(--error);
+  background: rgba(224, 79, 79, 0.08);
+}
+
+.story-title {
+  font-size: 2.3rem;
+  font-weight: 800;
+  line-height: 1.35;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+}
+
+.story-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  margin-top: 16px;
+  line-height: 1.6;
+}
+
+.story-message {
+  margin-top: 40px;
+  padding: 24px 30px;
+  border-radius: 16px;
+  background-color: var(--bg-secondary);
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  display: inline-block;
+  text-align: center;
+}
+
+.story-message strong {
+  color: var(--text-primary);
+  position: relative;
+  z-index: 1;
+}
+
+.story-message strong::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: rgba(249, 228, 0, 0.4);
+  z-index: -1;
+  border-radius: 2px;
+}
+
+/* ------------------------------------------
+   Section A: Distribution Flow Styling
+   ------------------------------------------ */
+.story-distribution {
+  background-color: #ffffff;
+}
+
+.distribution-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.dist-card {
+  border-radius: 24px;
+  padding: 40px 30px;
+  text-align: left;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.dist-complex {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--bg-tertiary);
+}
+
+.dist-direct {
+  background-color: var(--accent-light);
+  border: 2px solid var(--accent-color);
+  box-shadow: var(--accent-glow);
+}
+
+.badge-direct {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--text-primary);
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 30px;
+  letter-spacing: 1px;
+}
+
+.dist-card h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 30px;
+  color: var(--text-primary);
+}
+
+.dist-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.flow-step {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  border-radius: 12px;
+  background: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border: 1px solid var(--bg-tertiary);
+  color: var(--text-secondary);
+}
+
+.flow-step.step-middle {
+  background: rgba(0, 0, 0, 0.02);
+  border-style: dashed;
+}
+
+.flow-step.step-end {
+  background: #f1f1ee;
+  color: var(--text-muted);
+}
+
+.flow-step.step-emocar {
+  background: var(--text-primary);
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 14px;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.flow-arrow {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  animation: bounceDown 1.5s infinite;
+}
+
+.dist-note {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: auto;
+}
+
+.dist-highlight {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  text-align: center;
+  margin-top: auto;
+}
+
+.dist-highlight strong {
+  color: var(--text-primary);
+}
+
+/* ------------------------------------------
+   Section B: Family Business Styling
+   ------------------------------------------ */
+.story-family {
+  background-color: var(--bg-secondary);
+}
+
+.family-split {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 50px;
+  align-items: center;
+  text-align: left;
+}
+
+.family-visual {
+  background-color: var(--accent-color);
+  border-radius: 24px;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--accent-glow);
+  position: relative;
+}
+
+.visual-badge {
+  font-size: 4rem;
+  color: var(--text-on-accent);
+  margin-bottom: 12px;
+  animation: pulse 2s infinite;
+}
+
+.visual-caption {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-on-accent);
+  letter-spacing: -0.5px;
+}
+
+.family-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.family-point-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.point-icon {
+  font-size: 1.5rem;
+  background-color: #ffffff;
+  color: var(--text-primary);
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.point-text h4 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.point-text p {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ------------------------------------------
+   Section C: Privacy Danger Warning Styling
+   ------------------------------------------ */
+.story-privacy {
+  background-color: #ffffff;
+}
+
+.privacy-warning-box {
+  background-color: #fffbfb;
+  border: 1px dashed rgba(224, 79, 79, 0.3);
+  border-radius: 28px;
+  padding: 50px 40px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(224, 79, 79, 0.02);
+}
+
+.warning-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.warning-icon {
+  font-size: 3rem;
+  color: var(--error);
+}
+
+.warning-header h3 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--error);
+  letter-spacing: -0.5px;
+}
+
+.warning-body {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+}
+
+.warning-body strong {
+  color: var(--text-primary);
+}
+
+.warning-footer {
+  border-top: 1px solid rgba(224, 79, 79, 0.1);
+  padding-top: 24px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.warning-highlight {
+  position: relative;
+  display: inline-block;
+}
+
+.warning-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: rgba(224, 79, 79, 0.15);
+  z-index: -1;
+}
+
+/* ------------------------------------------
+   Section D: Guarantee Document & Form CTA Styling
+   ------------------------------------------ */
+.story-guaranteed {
+  background-color: var(--bg-secondary);
+}
+
+/* 서약서 형태 디자인 */
+.guarantee-document {
+  background-color: #ffffff;
+  border-radius: 28px;
+  padding: 60px 48px;
+  border: 1px solid var(--bg-tertiary);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.04);
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* 격조 있는 더블 테두리 효과 */
+.guarantee-document::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  border: 1px solid var(--bg-tertiary);
+  border-radius: 20px;
+  pointer-events: none;
+}
+
+.doc-header {
+  text-align: center;
+  margin-bottom: 45px;
+  border-bottom: 2px double var(--bg-tertiary);
+  padding-bottom: 24px;
+}
+
+.doc-header h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: 2px;
+}
+
+.doc-header p {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 1.5px;
+  margin-top: 4px;
+}
+
+.doc-body {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 45px;
+  text-align: left;
+}
+
+.doc-promise {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.promise-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  background-color: var(--text-primary);
+  color: #ffffff;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.promise-text h4 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.promise-text p {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.doc-footer {
+  border-top: 1px solid var(--bg-tertiary);
+  padding-top: 30px;
+  text-align: center;
+}
+
+.doc-footer > p {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+.doc-stamp-area {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 20px;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.doc-stamp-area strong {
+  font-size: 1.15rem;
+  margin: 0 6px;
+  letter-spacing: 2px;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 도장 이미지 느낌의 안착 구도 */
+.doc-stamp-area::after {
+  content: '인';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 2px solid #e04f4f;
+  color: #e04f4f;
+  font-size: 0.8rem;
+  font-weight: 800;
+  border-radius: 50%;
+  margin-left: 8px;
+  transform: rotate(-10deg);
+  position: relative;
+}
+
+.story-cta-area {
+  margin-top: 50px;
+}
+
+/* ------------------------------------------
    Policy Modal
    ------------------------------------------ */
 .policy-modal {
@@ -386,6 +889,30 @@
   }
 }
 
+@keyframes bounceDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(249, 228, 0, 0.4);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(249, 228, 0, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(249, 228, 0, 0);
+  }
+}
+
 /* ------------------------------------------
    Responsive Breakpoints
    ------------------------------------------ */
@@ -402,6 +929,20 @@
   .form-wrapper {
     max-width: 100%;
   }
+
+  .distribution-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .family-split {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .family-visual {
+    height: 200px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -411,5 +952,21 @@
   
   .hero-title {
     font-size: 2.2rem;
+  }
+
+  .story-section {
+    padding: 80px 20px;
+  }
+
+  .story-title {
+    font-size: 1.7rem;
+  }
+
+  .privacy-warning-box {
+    padding: 30px 20px;
+  }
+
+  .guarantee-document {
+    padding: 40px 24px;
   }
 }

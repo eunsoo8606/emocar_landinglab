@@ -19,7 +19,64 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 2. 메인 히어로 견적 문의 신청 처리 (AJAX)
+  // 2. 요소 페이드인/업 스크롤 애니메이션 (Intersection Observer)
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+
+  const animObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // 애니메이션 효과 대상 타겟팅
+  const storySections = document.querySelectorAll('.story-section');
+  const distCards = document.querySelectorAll('.dist-card');
+  const familyPoints = document.querySelectorAll('.family-point-item');
+
+  storySections.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(40px)';
+    el.style.transition = 'opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
+    animObserver.observe(el);
+  });
+
+  // 스타일 시트 클래스로 제어
+  const injectStyles = () => {
+    const style = document.createElement('style');
+    style.innerHTML = `
+      .story-section.visible {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+      }
+    `;
+    document.head.appendChild(style);
+  };
+  injectStyles();
+
+  // 3. CTA 버튼 클릭 시 히어로 견적 폼으로 스크롤 & 자동 포커스
+  const ctaButtons = document.querySelectorAll('.btn-live-action, .btn-mobile-quote');
+  ctaButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetForm = document.querySelector('.hero-form-area');
+      if (targetForm) {
+        targetForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        const carInput = document.getElementById('car-model');
+        if (carInput) {
+          setTimeout(() => carInput.focus(), 600); // 스크롤 안착 대기 시간 고려
+        }
+      }
+    });
+  });
+
+  // 4. 메인 히어로 견적 문의 신청 처리 (AJAX)
   const heroForm = document.getElementById('heroQuoteForm');
   if (heroForm) {
     heroForm.addEventListener('submit', async (e) => {
