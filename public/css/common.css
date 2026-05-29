@@ -156,10 +156,10 @@ ul, ol {
   left: 0;
   width: 100%;
   height: var(--header-height);
-  background: rgba(240, 242, 248, 0.85); /* 소프트 라벤더 블루 반투명 (노란색 로고/포인트 대비용) */
+  background: rgba(26, 26, 25, 0.92); /* 딥 블랙/차콜 반투명 (노란색 대비 최고) */
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -197,7 +197,7 @@ ul, ol {
   font-family: 'Outfit', sans-serif;
   font-weight: 800;
   font-size: 1.6rem;
-  color: var(--text-primary);
+  color: #ffffff;
   letter-spacing: -0.03em;
 }
 
@@ -215,7 +215,7 @@ ul, ol {
 .nav-link {
   font-size: 0.95rem;
   font-weight: 600;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.85); /* 밝은 텍스트 변경 */
   position: relative;
   padding: 6px 0;
 }
@@ -227,13 +227,13 @@ ul, ol {
   left: 50%;
   width: 0;
   height: 2px;
-  background-color: var(--text-primary);
+  background-color: var(--accent-color); /* 노란색 액센트 밑줄 */
   transition: var(--transition-smooth);
   transform: translateX(-50%);
 }
 
 .nav-link:hover {
-  color: var(--text-primary);
+  color: #ffffff;
 }
 
 .nav-link:hover::after {
