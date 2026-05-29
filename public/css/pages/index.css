@@ -276,7 +276,14 @@
 
 .story-container {
   width: 100%;
-  max-width: 900px; /* 설득용 스토리는 좁게 모아 보여주는 게 가독성이 좋습니다 */
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.story-container-wide {
+  width: 100%;
+  max-width: 1000px;
   margin: 0 auto;
   text-align: center;
 }
@@ -346,6 +353,362 @@
   background-color: rgba(249, 228, 0, 0.4);
   z-index: -1;
   border-radius: 2px;
+}
+
+/* ------------------------------------------
+   Section: 중고차 수출이란? (what-is-export)
+   ------------------------------------------ */
+.section-what-is-export {
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--bg-secondary);
+}
+
+.export-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 50px;
+  align-items: center;
+  text-align: left;
+}
+
+.export-def-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+.export-def-desc {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.export-visual-cars {
+  display: flex;
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.visual-car-icon {
+  font-size: 3.5rem;
+  color: var(--accent-secondary);
+  opacity: 0.25;
+  transition: var(--transition-smooth);
+}
+
+.export-definition-area:hover .visual-car-icon {
+  opacity: 0.75;
+  transform: translateY(-5px);
+}
+
+.merit-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.merit-item {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.01);
+  transition: var(--transition-smooth);
+}
+
+.merit-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  background-color: #ffffff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+  border: 1px solid var(--bg-tertiary);
+}
+
+.merit-item p {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.merit-item p strong {
+  font-weight: 800;
+}
+
+.merit-item.highlight-merit {
+  background: var(--accent-light);
+  border: 1px solid rgba(249, 228, 0, 0.6);
+  box-shadow: var(--accent-glow);
+}
+
+.merit-item.highlight-merit .merit-num {
+  background-color: var(--accent-color);
+  border-color: var(--accent-secondary);
+}
+
+.merit-item:hover {
+  transform: translateX(8px);
+  border-color: var(--accent-color);
+}
+
+/* ------------------------------------------
+   Section: 내수 대비 수출가 비교 (price-comparison)
+   ------------------------------------------ */
+.section-price-comparison {
+  background-color: var(--bg-secondary);
+}
+
+.comparison-dual-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: stretch;
+}
+
+.comp-card-dark {
+  background-color: #1a1a19;
+  color: #ffffff;
+  border-radius: 28px;
+  padding: 50px 40px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+}
+
+.comp-badge-dark {
+  display: inline-block;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 20px;
+}
+
+.comp-card-dark h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1.4;
+  margin-bottom: 30px;
+}
+
+.comp-desc-area {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.75;
+}
+
+.comp-desc-area strong {
+  color: #ffffff;
+}
+
+.comp-desc-area .highlight-p {
+  color: var(--accent-color);
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+
+.comp-card-yellow {
+  background-color: var(--accent-color);
+  color: var(--text-on-accent);
+  border-radius: 28px;
+  padding: 50px 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--accent-glow);
+}
+
+.comp-badge-yellow {
+  display: inline-block;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: var(--text-secondary);
+  opacity: 0.6;
+  margin-bottom: 20px;
+}
+
+.comp-card-yellow h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+
+.yellow-sub-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.yellow-sub-title strong {
+  font-size: 1.4rem;
+  border-bottom: 2px solid var(--text-primary);
+}
+
+/* 3D 실린더 원기둥 차트 스타일 */
+.cylinder-chart-container {
+  position: relative;
+  height: 240px;
+  margin: 0 auto 30px auto;
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.cylinder-axis-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cylinder-axis-lines span {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(30, 30, 29, 0.08);
+}
+
+.cylinder-bars {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  height: 100%;
+  align-items: flex-end;
+  position: relative;
+  z-index: 2;
+  padding: 0 20px;
+}
+
+.cylinder-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.cylinder-val-label {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.cylinder-val-label.highlight-val {
+  color: var(--text-primary);
+  font-size: 1.15rem;
+  font-weight: 900;
+}
+
+.cylinder-bar-outer {
+  width: 64px;
+  height: 150px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+/* 3D 원기둥 본체 구조 */
+.cylinder-3d {
+  position: relative;
+  width: 100%;
+  /* 높이는 JS 스크롤 인터랙션 또는 최초 로딩 시 active 될 때 data-height 기반 구동 */
+  height: 0%; 
+  transition: height 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* 3D 실린더 윗뚜껑 */
+.cylinder-top {
+  position: absolute;
+  top: -8px;
+  left: 0;
+  width: 100%;
+  height: 16px;
+  border-radius: 50%;
+  z-index: 3;
+}
+
+/* 3D 실린더 기둥 몸통 */
+.cylinder-body {
+  width: 100%;
+  height: calc(100% - 8px);
+  border-radius: 0 0 32px 32px / 0 0 8px 8px; /* 바닥 입체 곡률 */
+  z-index: 2;
+  position: relative;
+}
+
+/* 오렌지색 실린더 배색 */
+.cylinder-orange .cylinder-top {
+  background-color: #ff8838;
+}
+
+.cylinder-orange .cylinder-body {
+  background: linear-gradient(90deg, #d85300 0%, #ff8838 40%, #ff7315 70%, #cc4e00 100%);
+  box-shadow: 0 10px 20px rgba(216, 83, 0, 0.2);
+}
+
+/* 민트색 실린더 배색 */
+.cylinder-mint .cylinder-top {
+  background-color: #26e2d9;
+}
+
+.cylinder-mint .cylinder-body {
+  background: linear-gradient(90deg, #0f9c96 0%, #26e2d9 40%, #1bd6cd 70%, #0d8782 100%);
+  box-shadow: 0 10px 25px rgba(15, 156, 150, 0.3);
+}
+
+.cylinder-name-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-top: 14px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.cylinder-name-label.highlight-name {
+  color: var(--text-primary);
+  font-weight: 800;
+}
+
+.cylinder-footer-text {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
 }
 
 /* ------------------------------------------
@@ -928,6 +1291,16 @@
   
   .form-wrapper {
     max-width: 100%;
+  }
+
+  .export-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .comparison-dual-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
 
   .distribution-grid {

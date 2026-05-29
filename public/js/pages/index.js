@@ -139,4 +139,24 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.style.overflow = '';
     }
   };
+
+  // 5. 3D 실린더 차트 애니메이션 트리거
+  const cylinderChartSection = document.querySelector('.section-price-comparison');
+  if (cylinderChartSection) {
+    const cylinders = cylinderChartSection.querySelectorAll('.cylinder-3d');
+    const chartObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          cylinders.forEach(cylinder => {
+            const targetHeight = cylinder.getAttribute('data-height');
+            if (targetHeight) {
+              cylinder.style.height = `${targetHeight}%`;
+            }
+          });
+          chartObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    chartObserver.observe(cylinderChartSection);
+  }
 });
