@@ -140,23 +140,56 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // 5. 3D 실린더 차트 애니메이션 트리거
-  const cylinderChartSection = document.querySelector('.section-price-comparison');
-  if (cylinderChartSection) {
-    const cylinders = cylinderChartSection.querySelectorAll('.cylinder-3d');
+  // 5. 모던 플랫 막대 차트 및 숫자 카운팅 애니메이션 트리거
+  const priceComparisonSection = document.querySelector('.section-price-comparison');
+  if (priceComparisonSection) {
+    const flatBars = priceComparisonSection.querySelectorAll('.flat-bar');
+    const countNums = priceComparisonSection.querySelectorAll('.count-num');
+    
+    // 숫자 카운팅 함수 (1.5초 동안 부드럽게 증가)
+    const animateValue = (el) => {
+      const target = parseInt(el.getAttribute('data-target'), 10);
+      const duration = 1500;
+      const startTimestamp = performance.now();
+      
+      const step = (now) => {
+        const elapsed = now - startTimestamp;
+        const progress = Math.min(elapsed / duration, 1);
+        // Easing: easeOutQuart
+        const easeProgress = 1 - Math.pow(1 - progress, 4);
+        const current = Math.floor(easeProgress * target);
+        
+        el.textContent = current;
+        
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          el.textContent = target;
+        }
+      };
+      requestAnimationFrame(step);
+    };
+
     const chartObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          cylinders.forEach(cylinder => {
-            const targetHeight = cylinder.getAttribute('data-height');
+          // 막대 높이 상승
+          flatBars.forEach(bar => {
+            const targetHeight = bar.getAttribute('data-height');
             if (targetHeight) {
-              cylinder.style.height = `${targetHeight}%`;
+              bar.style.height = `${targetHeight}%`;
             }
           });
+          
+          // 숫자 카운트 업 실행
+          countNums.forEach(num => {
+            animateValue(num);
+          });
+          
           chartObserver.unobserve(entry.target);
         }
       });
     }, { threshold: 0.2 });
-    chartObserver.observe(cylinderChartSection);
+    chartObserver.observe(priceComparisonSection);
   }
 });
