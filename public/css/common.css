@@ -156,10 +156,10 @@ ul, ol {
   left: 0;
   width: 100%;
   height: var(--header-height);
-  background: rgba(26, 26, 25, 0.92); /* 딥 블랙/차콜 반투명 (노란색 대비 최고) */
+  background: rgba(255, 255, 255, 0.85); /* 웜 화이트 반투명 복원 */
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -197,7 +197,7 @@ ul, ol {
   font-family: 'Outfit', sans-serif;
   font-weight: 800;
   font-size: 1.6rem;
-  color: #ffffff;
+  color: var(--text-primary);
   letter-spacing: -0.03em;
 }
 
@@ -215,7 +215,7 @@ ul, ol {
 .nav-link {
   font-size: 0.95rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.85); /* 밝은 텍스트 변경 */
+  color: var(--text-secondary); /* 어두운 그레이 복원 */
   position: relative;
   padding: 6px 0;
 }
@@ -227,13 +227,13 @@ ul, ol {
   left: 50%;
   width: 0;
   height: 2px;
-  background-color: var(--accent-color); /* 노란색 액센트 밑줄 */
+  background-color: var(--text-primary); /* 어두운 차콜 밑줄 복원 */
   transition: var(--transition-smooth);
   transform: translateX(-50%);
 }
 
 .nav-link:hover {
-  color: #ffffff;
+  color: var(--text-primary);
 }
 
 .nav-link:hover::after {
