@@ -181,6 +181,18 @@ ul, ol {
   align-items: center;
 }
 
+.logo-img {
+  height: 42px; /* 이모카 로고 높이 설정 */
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.02));
+  transition: var(--transition-smooth);
+}
+
+.logo-img:hover {
+  transform: scale(1.02);
+}
+
 .logo-text {
   font-family: 'Outfit', sans-serif;
   font-weight: 800;
