@@ -297,17 +297,19 @@
   font-family: 'Outfit', sans-serif;
   font-size: 0.8rem;
   font-weight: 800;
-  letter-spacing: 2px;
-  color: var(--text-muted);
-  background: var(--bg-secondary);
+  letter-spacing: 1.5px;
+  color: var(--text-primary);
+  background: #ffffff;
   padding: 6px 16px;
-  border-radius: 30px;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+  border: 1px solid var(--bg-tertiary);
   margin-bottom: 20px;
 }
 
 .warning-tag {
   color: var(--error);
-  background: rgba(224, 79, 79, 0.08);
+  border: 1px solid rgba(224, 79, 79, 0.2);
 }
 
 .story-title {
