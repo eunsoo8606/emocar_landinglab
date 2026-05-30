@@ -1398,6 +1398,167 @@
 }
 
 /* ------------------------------------------
+   Section: 사용자 리뷰 (section-reviews)
+   ------------------------------------------ */
+.section-reviews {
+  background-color: var(--bg-secondary);
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 50px;
+  text-align: left;
+}
+
+.review-card {
+  background: #ffffff;
+  border: 1px solid var(--bg-tertiary);
+  border-radius: 20px;
+  padding: 0;
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.review-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.05);
+  border-color: rgba(249, 228, 0, 0.5);
+}
+
+.review-img-box {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--bg-secondary);
+}
+
+.review-car-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.review-card:hover .review-car-img {
+  transform: scale(1.06);
+}
+
+.review-status-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background-color: var(--text-primary);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  letter-spacing: 0.5px;
+  z-index: 2;
+}
+
+.review-body-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.review-avatar {
+  width: 44px;
+  height: 44px;
+  background-color: var(--accent-color);
+  color: var(--text-on-accent);
+  font-size: 1.1rem;
+  font-weight: 800;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--accent-glow);
+}
+
+.review-user-info h4 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0;
+  margin-bottom: 2px;
+}
+
+.user-region {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-left: 6px;
+}
+
+.user-car-tag {
+  font-size: 0.8rem;
+  color: var(--accent-secondary);
+  font-weight: 700;
+  margin: 0;
+}
+
+.review-rating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: #ffbc00;
+  font-size: 0.85rem;
+  margin-bottom: 14px;
+}
+
+.rating-number {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-left: 6px;
+}
+
+.review-price-benefit {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  background-color: var(--accent-light);
+  border: 1px solid rgba(249, 228, 0, 0.3);
+  padding: 6px 12px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.review-price-benefit strong {
+  color: #d85300;
+  font-weight: 800;
+}
+
+.review-content {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+  word-break: keep-all;
+  flex-grow: 1;
+}
+
+/* ------------------------------------------
    Responsive Breakpoints
    ------------------------------------------ */
 @media (max-width: 991px) {
@@ -1442,6 +1603,11 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 40px 24px;
   }
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1476,5 +1642,9 @@
 
   .process-card {
     padding: 40px 20px 30px 20px;
+  }
+
+  .review-card {
+    padding: 25px 20px;
   }
 }
