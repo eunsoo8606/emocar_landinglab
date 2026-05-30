@@ -4,20 +4,6 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 0. 메인 히어로 배경 Swiper 슬라이더 초기화
-  if (document.querySelector('.hero-bg-swiper')) {
-    const heroSwiper = new Swiper('.hero-bg-swiper', {
-      effect: 'fade',
-      fadeEffect: { crossFade: true },
-      loop: true,
-      speed: 1500, // 부드러운 화면 전환 속도
-      autoplay: {
-        delay: 5000, // 5초 간격으로 전환
-        disableOnInteraction: false,
-      },
-    });
-  }
-
   // 1. 헤더 스크롤 효과 (웜 화이트 반투명 제어)
   const header = document.getElementById('global-header');
   

@@ -14,7 +14,7 @@
   overflow: hidden;
 }
 
-.hero-bg-swiper {
+.hero-video-bg {
   position: absolute !important;
   top: 0;
   left: 0;
@@ -24,29 +24,11 @@
   overflow: hidden;
 }
 
-.hero-bg-swiper .swiper-wrapper {
-  height: 100% !important;
-}
-
-.hero-bg-swiper .swiper-slide {
-  height: 100% !important;
-}
-
-.hero-bg-swiper .swiper-slide:not(:first-child) {
-  opacity: 0;
-}
-
-.hero-bg-swiper.swiper-initialized .swiper-slide:not(:first-child) {
-  opacity: 1;
-}
-
-.hero-bg-swiper .slide-bg {
+#hero-video {
   width: 100%;
   height: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  filter: blur(1px) brightness(0.9);
+  object-fit: cover;
+  filter: brightness(0.85);
 }
 
 .hero-bg-overlay {
