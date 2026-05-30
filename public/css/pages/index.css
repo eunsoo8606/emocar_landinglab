@@ -773,8 +773,8 @@
 }
 
 .dist-direct {
-  background-color: var(--accent-light);
-  border: 2px solid var(--accent-color);
+  background-color: var(--accent-color);
+  border: none;
   box-shadow: var(--accent-glow);
 }
 
@@ -858,6 +858,10 @@
   line-height: 1.7;
   text-align: center;
   margin-top: auto;
+}
+
+.dist-direct .dist-highlight {
+  color: var(--text-primary);
 }
 
 .dist-highlight strong {
