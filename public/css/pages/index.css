@@ -1130,9 +1130,10 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding-right: 20px;
+  padding-right: 50px; /* 텍스트를 좌측으로 밀어 글자와 도장의 겹침 강도 완화 */
   font-size: 1rem;
   color: var(--text-primary);
+  position: relative;
 }
 
 .doc-stamp-area strong {
@@ -1142,22 +1143,18 @@
   font-family: 'Noto Sans KR', sans-serif;
 }
 
-/* 도장 이미지 느낌의 안착 구도 */
-.doc-stamp-area::after {
-  content: '인';
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border: 2px solid #e04f4f;
-  color: #e04f4f;
-  font-size: 0.8rem;
-  font-weight: 800;
-  border-radius: 50%;
-  margin-left: 8px;
-  transform: rotate(-10deg);
-  position: relative;
+/* 실제 직인 이미지 안착 구도 */
+.doc-stamp-img {
+  width: 55px;
+  height: auto;
+  position: absolute;
+  right: 15px; /* 좌측으로 밀린 텍스트 끝 (인) 글자와 조화롭게 겹쳐지는 최적 위치 */
+  top: 50%;
+  transform: translateY(-50%) rotate(-8deg);
+  opacity: 0.85;
+  mix-blend-mode: multiply; /* 흰색 배경을 제거하고 도장 느낌 서명 합성 */
+  pointer-events: none;
+  z-index: 2;
 }
 
 .story-cta-area {
