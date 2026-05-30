@@ -1,8 +1,23 @@
 <%- include('../partials/header') %>
 
-  <!-- 히어로 섹션 (소개 및 폼, 모던 미니멀 배경) -->
+  <!-- 히어로 섹션 (소개 및 폼, AI 이미지 슬라이더 배경) -->
   <section class="hero-section">
-    <div class="hero-bg-overlay"></div>
+    <!-- Swiper 배경 슬라이더 -->
+    <div class="swiper hero-bg-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="slide-bg" style="background-image: url('/images/hero/bg_export_port.png');"></div>
+        </div>
+        <div class="swiper-slide">
+          <div class="slide-bg" style="background-image: url('/images/hero/bg_export_ship.png');"></div>
+        </div>
+        <div class="swiper-slide">
+          <div class="slide-bg" style="background-image: url('/images/hero/bg_cozy_consulting.png');"></div>
+        </div>
+      </div>
+      <div class="hero-bg-overlay"></div>
+    </div>
+
     <div class="hero-container">
       <div class="hero-grid">
         <!-- 좌측 소개란 (이모카 컨셉 반영) -->
